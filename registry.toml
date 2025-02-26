@@ -1883,6 +1883,11 @@ weave-gitops.backends = [
     "asdf:deas/asdf-weave-gitops"
 ]
 websocat.backends = ["aqua:vi/websocat", "asdf:bdellegrazie/asdf-websocat"]
+werf.backends = [
+    "ubi:werf/werf"
+    # https://tuf.werf.io/targets/releases/{{version}}/{{os}}-{{arch}}/bin/werf
+]
+werf.test = ["werf version", "{{version}}"]
 wren.aliases = ["wren-cli"]
 wren.backends = [
     "ubi:wren-lang/wren-cli[exe=wren_cli]",
