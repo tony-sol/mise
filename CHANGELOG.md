@@ -1,5 +1,165 @@
 # Changelog
 
+## [2026.2.16](https://github.com/jdx/mise/compare/v2026.2.15..v2026.2.16) - 2026-02-17
+
+### 🚀 Features
+
+- **(mcp)** add run_task tool for executing mise tasks by @joaommartins in [#8179](https://github.com/jdx/mise/pull/8179)
+- **(node)** suggest setting node.flavor if the flavor is not found in mirror by @risu729 in [#8206](https://github.com/jdx/mise/pull/8206)
+
+### 🐛 Bug Fixes
+
+- **(java)** sort order for shorthand versions by @roele in [#8197](https://github.com/jdx/mise/pull/8197)
+- **(node)** migrate env vars to settings by @risu729 in [#8200](https://github.com/jdx/mise/pull/8200)
+- **(registry)** apply overrides in shims by @risu729 in [#8199](https://github.com/jdx/mise/pull/8199)
+- migrate MISE_CARGO_BINSTALL_ONLY to settings by @risu729 in [#8202](https://github.com/jdx/mise/pull/8202)
+
+### 📚 Documentation
+
+- **(doctor)** fix subcommand in an example by @risu729 in [#8198](https://github.com/jdx/mise/pull/8198)
+
+### 📦 Registry
+
+- add github backend for typst by @3w36zj6 in [#8210](https://github.com/jdx/mise/pull/8210)
+
+### Chore
+
+- **(test)** disable flaky Forgejo e2e test by @jdx in [#8211](https://github.com/jdx/mise/pull/8211)
+
+## [2026.2.15](https://github.com/jdx/mise/compare/v2026.2.14..v2026.2.15) - 2026-02-17
+
+### 🚀 Features
+
+- **(task)** stream keep-order output in real-time per task by @jdx in [#8164](https://github.com/jdx/mise/pull/8164)
+
+### 🐛 Bug Fixes
+
+- **(aqua)** resolve lockfile artifacts for target platform (fix discussion #7479) by @mackwic in [#8183](https://github.com/jdx/mise/pull/8183)
+- **(exec)** strip shims from PATH to prevent recursive shim execution by @jdx in [#8189](https://github.com/jdx/mise/pull/8189)
+- **(hook-env)** preserve PATH reordering done after activation by @jdx in [#8190](https://github.com/jdx/mise/pull/8190)
+- **(lockfile)** resolve version aliases before lockfile lookup by @jdx in [#8194](https://github.com/jdx/mise/pull/8194)
+- **(registry)** set helm-diff archive bin name to diff by @jean-humann in [#8173](https://github.com/jdx/mise/pull/8173)
+- **(task)** improve source freshness checks with dynamic task dirs by @rooperuu in [#8169](https://github.com/jdx/mise/pull/8169)
+- **(task)** resolve global tasks when running from monorepo root by @jdx in [#8192](https://github.com/jdx/mise/pull/8192)
+- **(task)** prevent wildcard glob `test:*` from matching parent task `test` by @jdx in [#8165](https://github.com/jdx/mise/pull/8165)
+- **(task)** resolve task_config.includes relative to config root by @jdx in [#8193](https://github.com/jdx/mise/pull/8193)
+- **(upgrade)** skip untrusted tracked configs during upgrade by @jdx in [#8195](https://github.com/jdx/mise/pull/8195)
+
+### 🚜 Refactor
+
+- use enum for npm.pacakge_manager by @risu729 in [#8180](https://github.com/jdx/mise/pull/8180)
+
+### 📚 Documentation
+
+- **(plugins)** replace node/asdf-nodejs examples with vfox plugins by @jdx in [#8191](https://github.com/jdx/mise/pull/8191)
+
+### ⚡ Performance
+
+- call npm view only once by @risu729 in [#8181](https://github.com/jdx/mise/pull/8181)
+
+### New Contributors
+
+- @jean-humann made their first contribution in [#8173](https://github.com/jdx/mise/pull/8173)
+- @mackwic made their first contribution in [#8183](https://github.com/jdx/mise/pull/8183)
+- @rooperuu made their first contribution in [#8169](https://github.com/jdx/mise/pull/8169)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (2)
+
+- [`BetterDiscord/cli`](https://github.com/BetterDiscord/cli)
+- [`glossia.ai/cli`](https://github.com/glossia.ai/cli)
+
+## [2026.2.14](https://github.com/jdx/mise/compare/v2026.2.13..v2026.2.14) - 2026-02-16
+
+### 🚀 Features
+
+- **(vfox)** allow plugins to request env var redaction via MiseEnvResult by @jdx in [#8166](https://github.com/jdx/mise/pull/8166)
+- add a default_host setting for rust by @aacebedo in [#8154](https://github.com/jdx/mise/pull/8154)
+- add github_content package support for aqua backend by @risu729 in [#8147](https://github.com/jdx/mise/pull/8147)
+- support devEngines.runtime in deno by @risu729 in [#8144](https://github.com/jdx/mise/pull/8144)
+
+### 🐛 Bug Fixes
+
+- **(asset_matcher)** penalize vsix files by @risu729 in [#8151](https://github.com/jdx/mise/pull/8151)
+- **(edit)** strip formatting whitespace from TOML values in `mise edit` by @jdx in [#8162](https://github.com/jdx/mise/pull/8162)
+- **(install)** improve --locked support for python and ubi backends by @jdx in [#8163](https://github.com/jdx/mise/pull/8163)
+- **(npm)** suppress npm update notifier while npm install by @risu729 in [#8152](https://github.com/jdx/mise/pull/8152)
+- **(schema)** add task_templates, extends, and timeout by @risu729 in [#8145](https://github.com/jdx/mise/pull/8145)
+
+### 🚜 Refactor
+
+- **(registry)** remove [key=value] options syntax from backends by @risu729 in [#8146](https://github.com/jdx/mise/pull/8146)
+
+### 📚 Documentation
+
+- **(settings)** remove wrong tip for github_attestations by @risu729 in [#8158](https://github.com/jdx/mise/pull/8158)
+
+### Chore
+
+- **(release-plz)** delete embedded plugins directory before update by @risu729 in [#8149](https://github.com/jdx/mise/pull/8149)
+- adds necessary env var to the mcp help message in cli by @joaommartins in [#8133](https://github.com/jdx/mise/pull/8133)
+
+### New Contributors
+
+- @joaommartins made their first contribution in [#8133](https://github.com/jdx/mise/pull/8133)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (5)
+
+- [`containers/podlet`](https://github.com/containers/podlet)
+- [`hickford/git-credential-azure`](https://github.com/hickford/git-credential-azure)
+- [`hickford/git-credential-oauth`](https://github.com/hickford/git-credential-oauth)
+- [`kovetskiy/mark`](https://github.com/kovetskiy/mark)
+- [`openbao/openbao/bao`](https://github.com/openbao/openbao/bao)
+
+## [2026.2.13](https://github.com/jdx/mise/compare/v2026.2.12..v2026.2.13) - 2026-02-15
+
+### 📦️ Dependency Updates
+
+- bump sigstore-verification to 0.2 by @jdx in [e8897c9](https://github.com/jdx/mise/commit/e8897c9fbc873fe272495a65e5a88b04b97f3b6d)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (1)
+
+- [`k1LoW/tcmux`](https://github.com/k1LoW/tcmux)
+
+#### Updated Packages (1)
+
+- [`jdx/usage`](https://github.com/jdx/usage)
+
+## [2026.2.12](https://github.com/jdx/mise/compare/v2026.2.11..v2026.2.12) - 2026-02-14
+
+### 🚀 Features
+
+- **(java)** add a java.shorthand_vendor setting by @roele in [#8134](https://github.com/jdx/mise/pull/8134)
+
+### 📦 Aqua Registry Updates
+
+#### New Packages (4)
+
+- [`IvanIsCoding/celq`](https://github.com/IvanIsCoding/celq)
+- [`postfinance/topf`](https://github.com/postfinance/topf)
+- [`runkids/skillshare`](https://github.com/runkids/skillshare)
+- [`sandreas/tone`](https://github.com/sandreas/tone)
+
+## [2026.2.11](https://github.com/jdx/mise/compare/v2026.2.10..v2026.2.11) - 2026-02-12
+
+### 🚀 Features
+
+- **(env)** support array access for multiple tool versions in tera templates by @jdx in [#8129](https://github.com/jdx/mise/pull/8129)
+
+### 🐛 Bug Fixes
+
+- **(hook-env)** watch files accessed by tera template functions by @jdx in [#8122](https://github.com/jdx/mise/pull/8122)
+
+### 📦 Registry
+
+- added mutagen by @tony-sol in [#8125](https://github.com/jdx/mise/pull/8125)
+- add communique by @jdx in [#8126](https://github.com/jdx/mise/pull/8126)
+
 ## [2026.2.10](https://github.com/jdx/mise/compare/v2026.2.9..v2026.2.10) - 2026-02-12
 
 ### 🚀 Features

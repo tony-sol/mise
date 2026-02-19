@@ -76,7 +76,7 @@ impl JavaPlugin {
 
                 for m in self.download_java_metadata(&release_type).await? {
                     // add openjdk short versions like "java@17.0.0" which default to openjdk
-                    if m.vendor == "openjdk" {
+                    if m.vendor == Settings::get().java.shorthand_vendor {
                         metadata.insert(m.version.to_string(), m.clone());
                     }
                     metadata.insert(m.to_string(), m);
@@ -250,7 +250,7 @@ impl JavaPlugin {
     fn tv_to_java_version(&self, tv: &ToolVersion) -> String {
         if regex!(r"^\d").is_match(&tv.version) {
             // undo openjdk shorthand
-            format!("openjdk-{}", tv.version)
+            format!("{}-{}", Settings::get().java.shorthand_vendor, tv.version)
         } else {
             tv.version.clone()
         }
@@ -313,10 +313,13 @@ impl Backend for JavaPlugin {
             .sorted_by_cached_key(|(v, m)| {
                 let is_shorthand = regex!(r"^\d").is_match(v);
                 let vendor = &m.vendor;
-                let is_jdk = m
-                    .image_type
-                    .as_ref()
-                    .is_some_and(|image_type| image_type == "jdk");
+                let is_jdk = match is_shorthand {
+                    true => true,
+                    false => m
+                        .image_type
+                        .as_ref()
+                        .is_some_and(|image_type| image_type == "jdk"),
+                };
                 let features = 10 - m.features.as_ref().map_or(0, |f| f.len());
                 let version = Versioning::new(v);
                 // Extract build suffix after a '+', '.' if present. If not present, treat as 0.
